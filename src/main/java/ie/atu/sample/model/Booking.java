@@ -2,7 +2,6 @@ package ie.atu.sample.model;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @Entity
@@ -15,13 +14,16 @@ public class Booking {
     private Long roomId;
     private String roomName;
     private String organiserName;
-    private BigDecimal attendanceCount;
+    private BigInteger attendanceCount;
     private BigInteger status;
 
     public Booking () {}
-    public Booking(Long bookingId, String, BigInteger, BigDecimal) {
+    public Booking(Long bookingId, String roomName, BigInteger status, BigInteger attendanceCount, String organiserName, Long roomId) {
         this.bookingId = bookingId;
+        this.roomId = roomId;
         this.roomName = roomName;
+        this.status = status;
+        this.attendanceCount = attendanceCount;
         this.organiserName = organiserName;
     }
 
@@ -42,8 +44,8 @@ public class Booking {
     public void setOrganiserName(String organiserName) { this.organiserName = organiserName; }
     public String getOrganiserName() { return organiserName; }
 
-    public void setAttendanceCount(BigDecimal attendanceCount) { this.attendanceCount = attendanceCount; }
-    public BigDecimal getAttendanceCount() { return attendanceCount; }
+    public void setAttendanceCount(BigInteger attendanceCount) { this.attendanceCount = attendanceCount; }
+    public BigInteger getAttendanceCount() { return attendanceCount; }
 
     public void setBookingStatus(BigInteger bookingStatus) { this.status = bookingStatus; }
     public BigInteger getBookingStatus() { return status; }

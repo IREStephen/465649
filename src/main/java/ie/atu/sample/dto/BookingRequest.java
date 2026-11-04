@@ -1,6 +1,5 @@
 package ie.atu.sample.dto;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public record BookingRequest (
@@ -8,6 +7,6 @@ public record BookingRequest (
         Long roomId,
         String roomName,
         String organiserName,
-        BigDecimal attendanceCount,
+        BigInteger attendanceCount,
         BigInteger status )
 {}
